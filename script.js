@@ -10,7 +10,19 @@ var rowSingle = [
     [1, 2, 3, 4, 5, 6, 7, 8, null],
 ];
 
-gamePopulator(rowSingle);
+var colSingle = [
+    [null, 1, 1, 1, 1, 1, 1, 1, 1],
+    [2, null, 2, 2, 2, 2, 2, 2, 2],
+    [3, 3, null, 3, 3, 3, 3, 3, 3],
+    [4, 4, 4, null, 4, 4, 4, 4, 4],
+    [5, 5, 5, 5, null, 5, 5, 5, 5],
+    [6, 6, 6, 6, 6, null, 6, 6, 6],
+    [7, 7, 7, 7, 7, 7, null, 7, 7],
+    [8, 8, 8, 8, 8, 8, 8, null, 8],
+    [9, 9, 9, 9, 9, 9, 9, 9, null],
+]
+
+gamePopulator(colSingle);
 // Populates game board
 function gamePopulator(gameArray) {
     for (i = 0; i < gameArray.length; i++) {
@@ -35,7 +47,12 @@ $('#new-game').on('click', function () {
 // Solver button
 $('#solver').on('click', function () {
 
-    replaceRows();
+    // replaceRows();
+    replaceCols();
+})
+
+// Undo button
+$('#undo').on('click', function () {
 
 })
 
