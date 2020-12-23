@@ -22,6 +22,9 @@
     font-size: 3rem;
 }
 
+.block-anchored {
+    font-weight: bolder;
+}
 
 .clicker-block {
     display: flex;

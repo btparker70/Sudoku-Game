@@ -16,7 +16,11 @@ function gamePopulator(gameArray) {
     for (i = 0; i < gameArray.length; i++) {
         for (j = 0; j < gameArray[i].length; j++) {
             var letter = String.fromCharCode(65 + j);
-            $(`#block_${letter}${i + 1}`).text(gameArray[i][j]);
+            if (gameArray[i][j] !== null) {
+                $(`#block_${letter}${i + 1}`).text(gameArray[i][j]).addClass('anchored block-anchored');
+            } else {
+                $(`#block_${letter}${i + 1}`).text(gameArray[i][j]);
+            }
         }
     }
 }
@@ -74,6 +78,8 @@ $('.block').on('click', function () {
 
 // Enter number on board from button
 $('.clicker-block').on('click', function () {
-    const getNum = $(this).text();
-    $(".block[class*='selected']").text(getNum);
+    if ($(".block[class*='selected']").hasClass('anchored') === false) {
+        const getNum = $(this).text();
+        $(".block[class*='selected']").text(getNum);
+    }
 })
