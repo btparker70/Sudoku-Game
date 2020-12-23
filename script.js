@@ -22,9 +22,21 @@ var easyGame2 = [
     [6, null, null, null, 5, 4, null, 7, 1],
 ];
 
+var rowSingle = [
+    [null, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, null, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, null, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, null, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, null, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, null, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, null, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, null, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, null],
+];
+
 // Easy games
 var easyGames = [easyGame1, easyGame2];
-
+gamePopulator(rowSingle);
 // Populates game board
 function gamePopulator(gameArray) {
     for (i = 0; i < gameArray.length; i++) {
@@ -40,6 +52,13 @@ $('#new-game').on('click', function () {
     $('.block').empty();
     var randomNum = Math.floor(Math.random() * easyGames.length);
     gamePopulator(easyGames[randomNum]);
+})
+
+// Solver button
+$('#solver').on('click', function () {
+
+    replaceRows();
+
 })
 
 // Select empty block: Change block color when clicked
