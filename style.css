@@ -1,5 +1,5 @@
 .container {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,29 +7,29 @@
     background: #eee;
 }
 .game-board {
-    width: 950px;
-    height: 950px;
-    grid-template-columns: auto auto auto;
+    width: 75vw;
+    min-height: 85vh;
+    /* grid-template-columns: auto auto auto; */
 }
 .block {
     display: flex;
-    height: 100px;
-    width: 100px;
+    height: auto;
+    width: 8vw;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 80px;
+    font-size: 3rem;
 }
 
 
 .clicker-block {
     display: flex;
-    height: 100px;
-    width: 100px;
+    height: 66px;
+    width: 66px;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 80px;
+    font-size: 53px;
     background-color: green;
     border: 2px solid black;
     border-radius: 25px;

@@ -97,6 +97,7 @@ function replaceRows() {
     }
 }
 
+// Adds numbers to the board
 function rowRender(rowNumber, array) {
     for (j = 1; j < 10; j++) {
         var letter = String.fromCharCode(65 + j - 1);
