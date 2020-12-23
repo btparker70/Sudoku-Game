@@ -25,6 +25,7 @@ var colSingle = [
 gamePopulator(colSingle);
 // Populates game board
 function gamePopulator(gameArray) {
+    $(".block").removeClass('anchored block-anchored');
     for (i = 0; i < gameArray.length; i++) {
         for (j = 0; j < gameArray[i].length; j++) {
             var letter = String.fromCharCode(65 + j);
@@ -47,8 +48,9 @@ $('#new-game').on('click', function () {
 // Solver button
 $('#solver').on('click', function () {
 
-    // replaceRows();
     replaceCols();
+        replaceRows();
+
 })
 
 // Undo button

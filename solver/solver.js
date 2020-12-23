@@ -86,7 +86,7 @@ function rowRender(rowNumber, array) {
     }
 }
 
-// [n2]
+// Finishes all colums missing 1 [n2]
 function replaceCols() {
     for (n2 = 0; n2 < 9; n2++) {
         // start with A col
@@ -118,7 +118,7 @@ function colArrayMaker(colLetter) {
     }
     return array;
 }
-// [j2]
+// Adds numbers to the board [j2]
 function colRender(colLetter, array) {
     // console.log(array)
     for (j2 = 1; j2 < 10; j2++) {
@@ -126,4 +126,24 @@ function colRender(colLetter, array) {
         var ele = $(`#block_${colLetter}${j2}`);
         ele.text(array[j2 - 1]);
     }
+}
+
+
+function replaceSquares() {
+
+}
+
+function squareArrayMaker() {
+    var array = [];
+    // Go through 9 blocks of the square
+    for (i3 = 1; i3 < 10; i3++) {
+        // For each letter
+        var num = $(`#block_${colLetter}${i2}`).text();
+        var letter = String.fromCharCode(65 + i - 1);
+
+    }
+}
+
+function squareRender() {
+
 }
