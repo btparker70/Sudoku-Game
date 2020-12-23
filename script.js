@@ -21,11 +21,25 @@ var colSingle = [
     [8, 8, 8, 8, 8, 8, 8, null, 8],
     [9, 9, 9, 9, 9, 9, 9, 9, null],
 ]
+var easyGame4Solved = [
+    [3, 7, 4, 1, 6, 8, 2, 5, 9],
+    [5, 1, 9, 4, 2, 7, 6, 8, 3],
+    [2, 8, 6, 3, 9, 5, 7, 1, 4],
+    [6, 9, 8, 5, 4, 1, 3, 7, 2],
+    [1, 2, 3, 7, 8, 6, 9, 4, 5],
+    [4, 5, 7, 9, 3, 2, 1, 6, 8],
+    [9, 6, 2, 8, 7, 4, 5, 3, 1],
+    [8, 3, 5, 6, 1, 9, 4, 2, 7],
+    [7, 4, 1, 2, 5, 3, 8, 9, null],
+];
+// window.clearInterval(winAnimationSwitch);
 
-gamePopulator(colSingle);
+gamePopulator(easyGame4Solved);
 // Populates game board
 function gamePopulator(gameArray) {
-    $(".block").removeClass('anchored block-anchored');
+    $(".block").removeClass('anchored block-anchored').css('background-color', 'white');
+    // clearInterval(winAnimationSwitch);
+
     for (i = 0; i < gameArray.length; i++) {
         for (j = 0; j < gameArray[i].length; j++) {
             var letter = String.fromCharCode(65 + j);
@@ -101,4 +115,34 @@ $('.clicker-block').on('click', function () {
         const getNum = $(this).text();
         $(".block[class*='selected']").text(getNum);
     }
+    boardFullChecker();
 })
+
+// Win animation
+function winAnimation() {
+
+    $('.block').css('background-color', 'white');
+    var i = 1;
+    var j = 0;
+    setInterval(function(){ 
+        var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'rgb(250, 92, 0)', 'rgb(0, 245, 245)', 'rgb(204, 23, 114)']
+            $(`.block:contains('${(i%9) + 1}')`).css('background-color', `${colors[j%8]}`);
+        i++;
+        j++;
+    }, 100);
+}
+// var winAnimationSwitch = winAnimation();
+
+function boardFullChecker() {
+    var counter = 0;
+
+    $('.block').each(function() {
+        if ($(this).text().length) {
+            counter++;
+        }
+        if(counter == 81) {
+            winAnimation();
+        }
+    })
+    var counter = 0;
+}
