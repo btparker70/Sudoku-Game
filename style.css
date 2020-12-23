@@ -8,7 +8,8 @@
 }
 .game-board {
     width: 75vw;
-    min-height: 85vh;
+    min-height: 75vh;
+    margin-bottom: 2vh;
     /* grid-template-columns: auto auto auto; */
 }
 .block {
